@@ -19,7 +19,12 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.secondary.main,
+    width: 76,
+    height: 76
+  },
+  icon: {
+    fontSize: '2.5em'
   },
   form: {
     width: '100%',
@@ -48,7 +53,7 @@ export default ({ history }) => {
     <Container component='main' maxWidth='xs'>
       <div className={classes.container}>
         <Avatar className={classes.avatar}>
-          <AlarmOnOutlinedIcon />
+          <AlarmOnOutlinedIcon className={classes.icon} />
         </Avatar>
         <Typography component='h1' variant='h5'>
           Controle de Horas - Login

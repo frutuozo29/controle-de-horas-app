@@ -14,6 +14,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLogged: false
       }
+    case 'LOGOUT':
+      return {
+        ...state,
+        isLogged: false
+      }
     default:
       return state
   }

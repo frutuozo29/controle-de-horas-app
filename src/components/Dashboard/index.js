@@ -7,7 +7,7 @@ export default ({ history }) => {
 
       <button
         onClick={() => {
-          localStorage.clear('jwt-cdh')
+          localStorage.clear('jwt-cdh') // eslint-disable-line no-undef
           history.push('/login')
         }}
       >

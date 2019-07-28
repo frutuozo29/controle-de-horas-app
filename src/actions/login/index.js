@@ -19,9 +19,15 @@ export const login = (username, password) => dispatch => {
       return res.json()
     })
     .then(res => {
-      console.log(res)
       localStorage.setItem('jwt-cdh', res.token) // eslint-disable-line no-undef
       dispatch(loginSuccess())
     })
     .catch(() => dispatch(loginError()))
+}
+
+export const logout = () => {
+  localStorage.removeItem('jwt-cdh') // eslint-disable-line no-undef
+  return {
+    type: 'LOGOUT'
+  }
 }
