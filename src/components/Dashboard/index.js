@@ -2,6 +2,8 @@ import React from 'react'
 
 export default () => {
   return (
-    <div className='App' />
+    <div className='App'>
+      Dashboard
+    </div>
   )
 }
