@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../../actions/login'
 
@@ -16,6 +16,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import Routes from '../../routes'
+import { getToken } from '../../utils/token'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,14 +42,18 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default () => {
+export default ({ history }) => {
   const classes = useStyles()
   const isLogged = useSelector(({ auth }) => auth.isLogged)
   const matches = useMediaQuery('(min-width:600px)')
   const [anchorEl, setAnchorEl] = useState(null)
   const dispatch = useDispatch()
 
-  if (isLogged) {
+  useEffect(() => {
+    !isLogged && history && history.push('/')
+  }, [isLogged, history])
+
+  if (getToken()) {
     return (
       <div className={classes.root} >
         <AppBar className={classes.appBar} position='static'>

@@ -1,5 +1,7 @@
+import { hasToken } from '../../utils/token'
+
 const initialState = {
-  isLogged: true
+  isLogged: hasToken()
 }
 
 const reducer = (state = initialState, action) => {

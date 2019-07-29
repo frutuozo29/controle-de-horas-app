@@ -11,7 +11,7 @@ export const getProjetos = (username, password) => dispatch => {
   dispatch(getProjetosRequest())
 
   fetch(`${API_URL}/project`, { // eslint-disable-line no-undef
-    headers
+    headers: headers()
   })
     .then(res => {
       if (!res.ok) {

@@ -1,4 +1,5 @@
 import API_URL from '../../actions'
+import { setToken, removeToken } from '../../utils/token'
 
 export const loginSuccess = () => ({ type: 'LOGIN_SUCCESS' })
 
@@ -19,14 +20,14 @@ export const login = (username, password) => dispatch => {
       return res.json()
     })
     .then(res => {
-      localStorage.setItem('jwt-cdh', res.token) // eslint-disable-line no-undef
+      setToken(res.token)
       dispatch(loginSuccess())
     })
     .catch(() => dispatch(loginError()))
 }
 
 export const logout = () => {
-  localStorage.removeItem('jwt-cdh') // eslint-disable-line no-undef
+  removeToken()
   return {
     type: 'LOGOUT'
   }

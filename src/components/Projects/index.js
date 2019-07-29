@@ -43,12 +43,12 @@ export default () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {items.map(item => (
+          {items && items.map(item => (
             <TableRow key={item.id}>
               <TableCell component='th' scope='row'>
                 {item.name}
               </TableCell>
-              <TableCell align='right'>{10}</TableCell>
+              <TableCell align='right'>{item.quantity}</TableCell>
             </TableRow>
           ))}
         </TableBody>

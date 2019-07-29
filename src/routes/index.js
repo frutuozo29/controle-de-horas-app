@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Login from '../components/Login'
 import Projects from '../components/Projects'
+import { getToken } from '../utils/token'
 
 const requireLogin = (history) => {
 
@@ -13,7 +14,7 @@ const PrivateRoute = ({ component: Component, ...props }) => {
     <Route
       {...props}
       render={props =>
-        localStorage.getItem('jwt-cdh') ? ( // eslint-disable-line no-undef
+        getToken('jwt-cdh') ? (
           <Component {...props} />
         ) : (
           <Redirect

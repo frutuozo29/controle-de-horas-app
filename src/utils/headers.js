@@ -1,4 +1,6 @@
-export default {
-  Authorization: `Bearer ${localStorage.getItem('jwt-cdh')}`, // eslint-disable-line no-undef
+import { getToken } from './token'
+
+export default () => ({
+  Authorization: `Bearer ${getToken()}`,
   'Content-Type': 'application/json'
-}
+})
