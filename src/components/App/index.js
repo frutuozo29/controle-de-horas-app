@@ -19,7 +19,6 @@ import Routes from '../../routes'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
     flexGrow: 1
   },
   menuButton: {
@@ -28,7 +27,6 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1
   },
-  appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
     height: '100vh',
@@ -99,7 +97,6 @@ export default () => {
           </Toolbar>
         </AppBar>
         <main className={classes.content}>
-          <div className={classes.appBarSpacer} />
           <Container maxWidth='lg' className={classes.container}>
             <Grid container spacing={3}>
               <Routes />

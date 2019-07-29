@@ -64,8 +64,8 @@ export default ({ history }) => {
             margin='normal'
             required
             fullWidth
-            id='email'
-            label='Email'
+            id='name'
+            label='Nome'
             autoFocus
             value={username}
             onChange={(event) => setUsername(event.target.value)}

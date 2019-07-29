@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Login from '../components/Login'
-import Dashboard from '../components/Dashboard'
+import Projects from '../components/Projects'
 
 const requireLogin = (history) => {
 
@@ -31,8 +31,8 @@ const PrivateRoute = ({ component: Component, ...props }) => {
 const Routes = ({ history }) => (
   <Switch>
     <Route exact path='/login' component={Login} />
-    <PrivateRoute exact path='/' component={Dashboard} onEnter={requireLogin(history)} />
-    <PrivateRoute exact path='*' component={Dashboard} />
+    <PrivateRoute exact path='/' component={Projects} onEnter={requireLogin(history)} />
+    <PrivateRoute exact path='*' component={Projects} />
   </Switch>
 )
 
